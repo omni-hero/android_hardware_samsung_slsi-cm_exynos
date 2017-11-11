@@ -60,7 +60,7 @@ ExynosCameraFrame::~ExynosCameraFrame()
 
             while (curEntity != NULL) {
                 tmpEntity = curEntity->getNextEntity();
-                ALOGV("DEBUG(%s[%d])", __FUNCTION__, curEntity->pipeId);
+                ALOGV("DEBUG(%s[%d])", __FUNCTION__, curEntity->getPipeId());
 
                 delete curEntity;
                 curEntity = tmpEntity;

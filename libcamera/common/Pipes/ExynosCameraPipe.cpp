@@ -252,7 +252,7 @@ status_t ExynosCameraPipe::startThread(void)
     }
 
     m_timer.start();
-    m_mainThread->run();
+    m_mainThread->run("ExynosCameraPipe_mainThread");
 
     CLOGI("INFO(%s[%d]):startThread is succeed (%d)", __FUNCTION__, __LINE__, getPipeId());
 

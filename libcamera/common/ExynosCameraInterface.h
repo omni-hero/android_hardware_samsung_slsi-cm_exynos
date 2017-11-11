@@ -29,16 +29,7 @@
 
 namespace android {
 
-static CameraInfo sCameraInfo[] = {
-    {
-        CAMERA_FACING_BACK,
-        BACK_ROTATION  /* orientation */
-    },
-    {
-        CAMERA_FACING_FRONT,
-        FRONT_ROTATION  /* orientation */
-    }
-};
+static CameraInfo sCameraInfo[MAX_NUM_OF_CAMERA];
 
 static camera_device_t *g_cam_device[MAX_NUM_OF_CAMERA];
 

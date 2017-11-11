@@ -46,6 +46,11 @@ static int HAL_camera_device_open(
         return -1;
     }
 
+    sCameraInfo[0].facing = CAMERA_FACING_BACK;
+    sCameraInfo[0].orientation = BACK_ROTATION;
+    sCameraInfo[1].facing = CAMERA_FACING_FRONT;
+    sCameraInfo[1].orientation = FRONT_ROTATION;
+
     if ((unsigned int)cameraId < (sizeof(sCameraInfo) / sizeof(sCameraInfo[0]))) {
         if (g_cam_device[cameraId]) {
             ALOGE("DEBUG(%s):returning existing camera ID %s", __FUNCTION__, id);

@@ -209,7 +209,7 @@ status_t ExynosCameraBufferManager::alloc(void)
 
     if (m_allocMode == BUFFER_MANAGER_ALLOCATION_SILENT) {
         /* run the allocationThread */
-        m_allocationThread->run(PRIORITY_DEFAULT);
+        m_allocationThread->run("ExynosCameraBufferManager_allocationThread", PRIORITY_DEFAULT);
         CLOGI("INFO(%s[%d]):allocationThread is started", __FUNCTION__, __LINE__);
     }
 

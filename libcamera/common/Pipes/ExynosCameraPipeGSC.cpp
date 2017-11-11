@@ -114,7 +114,7 @@ status_t ExynosCameraPipeGSC::startThread(void)
         return INVALID_OPERATION;
     }
 
-    m_mainThread->run();
+    m_mainThread->run("ExynosCameraPipeGSC_mainThread");
 
     ALOGI("INFO(%s[%d]):startThread is succeed (%d)", __FUNCTION__, __LINE__, getPipeId());
 

@@ -39,13 +39,22 @@ public:
         m_priority   = priority;
     }
 
-    virtual status_t run(int32_t priority = PRIORITY_DEFAULT, size_t stack = 0) {
+    status_t run(int32_t priority = PRIORITY_DEFAULT, size_t stack = 0) {
 
         ALOGV("DEBUG(%s):Thread(%s) start running", __FUNCTION__, m_name);
         if (m_priority != priority)
             m_priority = priority;
 
         return Thread::run(m_name, m_priority, stack);
+    }
+
+    virtual status_t run(const char *name, int32_t priority = PRIORITY_DEFAULT, size_t stack = 0) {
+
+        ALOGV("DEBUG(%s):Thread(%s) start running", __FUNCTION__, name);
+        if (m_priority != priority)
+            m_priority = priority;
+
+        return Thread::run(name, m_priority, stack);
     }
 
 private:

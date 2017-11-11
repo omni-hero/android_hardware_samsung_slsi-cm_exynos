@@ -123,7 +123,7 @@ public:
         if (m_waitProcessQ)
             m_processQCondition.signal();
         else if (m_thread != NULL && m_thread->isRunning() == false)
-            m_thread->run();
+            m_thread->run("ExynosCameraList_thread");
     };
 
     status_t popProcessQ(T *buf)
